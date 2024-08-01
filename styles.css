@@ -2,10 +2,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#geotag {
-    width: calc(100% - 20px);
-    box-sizing: border-box;
-}
 
 #image-container {
     padding: 0;
@@ -17,4 +13,16 @@ body {
 
 #image {
     display: block;
+}
+
+#geotag {
+    display: block;
+    width: 100%;
+    /* This will be overridden by the JavaScript to match the image width */
+    word-wrap: break-word;
+    /* Ensure text wraps within the div */
+    overflow-wrap: break-word;
+    /* Ensure text wraps within the div */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
 }

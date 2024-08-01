@@ -4,6 +4,12 @@ document.getElementById('upload').addEventListener('change', function(event) {
         const reader = new FileReader();
         reader.onload = function(e) {
             const img = document.getElementById('image');
+            img.onload = function() {
+                // Set the width of the #geotag div to match the width of the image
+                const imgWidth = img.clientWidth;
+                const geotag = document.getElementById('geotag');
+                geotag.style.width = imgWidth + 'px';
+            };
             img.src = e.target.result;
             img.classList.remove('hidden');
             img.classList.add('block');
