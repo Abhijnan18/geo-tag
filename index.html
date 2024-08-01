@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Geotag Editor</title>
     <link href="src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
     <h1 class="text-3xl font-bold mb-6">Geotag Editor</h1>
     <div class="container mx-auto p-4 bg-white shadow-md rounded">
-        <input type="file" id="upload" accept="image/*" class="mb-4 p-2 border rounded">
+        <input type="file" id="upload" accept="image/*" class="mb-24 p-2 border rounded">
         <br>
         <div class="relative" id="image-container">
             <img id="image" class="hidden">
-            <div id="geotag" class="absolute bottom-0 left-0 p-4 bg-black bg-opacity-75 text-white">
-                <p id="line1" class="text-lg font-bold"></p>
-                <p id="line2" class="text-md"></p>
-                <p id="line3" class="text-md"></p>
-                <p id="line4" class="text-md"></p>
-                <p id="line5" class="text-md"></p>
+            <div id="geotag" class="absolute bottom-0 left-0  bg-transperent text-white">
+                <div>
+                    <img src="tag.png" alt="" class="ml-auto w-auto h-[35px]">
+                </div>
+                <div class="bg-black bg-opacity-80 text-white p-4">
+                    <p id="line1" class="text-lg font-bold"></p>
+                    <p id="line2" class="text-md"></p>
+                    <p id="line3" class="text-md"></p>
+                    <p id="line4" class="text-md"></p>
+                    <p id="line5" class="text-md"></p>
+                </div>
             </div>
         </div>
         <br>
@@ -44,11 +51,14 @@
                 <input type="datetime-local" id="datetime" class="w-full p-2 border rounded">
             </div>
         </div>
-        <button id="update" class="mt-4 p-2 bg-blue-500 text-white rounded">Update Geotag</button>
-        <br>
-        <button id="download" class="mt-4 p-2 bg-green-500 text-white rounded">Download Image</button>
+        <div class="items-center justify-center flex">
+            <button id="update" class="mt-4 p-2 bg-blue-500 text-white rounded row-span-1 mr-5">Update Geotag</button>
+            <br>
+            <button id="download" class="mt-4 p-2 bg-green-500 text-white rounded ml-5">Download Image</button>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
