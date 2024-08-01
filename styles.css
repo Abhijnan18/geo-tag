@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#geotag {
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
