@@ -31,8 +31,21 @@ document.getElementById('update').addEventListener('click', function() {
 });
 
 document.getElementById('download').addEventListener('click', function() {
-    html2canvas(document.getElementById('image-container'), {
-        useCORS: true
+    const img = document.getElementById('image');
+    const imgContainer = document.getElementById('image-container');
+
+    // Calculate the actual dimensions of the image within the container
+    const imgWidth = img.clientWidth;
+    const imgHeight = img.clientHeight;
+    const imgLeft = img.offsetLeft;
+    const imgTop = img.offsetTop;
+
+    html2canvas(imgContainer, {
+        useCORS: true,
+        width: imgWidth,
+        height: imgHeight,
+        x: imgLeft,
+        y: imgTop
     }).then(function(canvas) {
         const link = document.createElement('a');
         link.download = 'geotagged_image.png';

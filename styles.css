@@ -6,3 +6,15 @@ body {
     width: calc(100% - 20px);
     box-sizing: border-box;
 }
+
+#image-container {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    /* Ensures container size fits the image */
+    position: relative;
+}
+
+#image {
+    display: block;
+}
