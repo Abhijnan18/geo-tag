@@ -25,15 +25,20 @@ document.getElementById('update').addEventListener('click', function() {
     const address = document.getElementById('address').value;
     const datetime = document.getElementById('datetime').value;
 
-    // Generate random latitude and longitude
-    const latitude = (Math.random() * (12.99999 - 12.00000) + 12.00000).toFixed(5);
-    const longitude = (Math.random() * (77.99999 - 77.00000) + 77.00000).toFixed(5);
+    // Generate random latitude and longitude within Bengaluru
+    const latitude = (Math.random() * (13.13988 - 12.83489) + 12.83489).toFixed(5);
+    const longitude = (Math.random() * (77.71182 - 77.49265) + 77.49265).toFixed(5);
 
     document.getElementById('line1').textContent = `${city}, ${state}, ${country}`;
     document.getElementById('line2').textContent = address;
     document.getElementById('line3').textContent = `Lat ${latitude}°`;
     document.getElementById('line4').textContent = `Long ${longitude}°`;
-    document.getElementById('line5').textContent = new Date(datetime).toLocaleString();
+
+    // Format datetime in MM/DD/YYYY HH:MM AM/PM format
+    const dateObj = new Date(datetime);
+    const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const formattedDate = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()} ${dateObj.toLocaleString('en-US', options)}`;
+    document.getElementById('line5').textContent = formattedDate;
 });
 
 document.getElementById('download').addEventListener('click', function() {
